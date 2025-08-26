@@ -1,0 +1,22 @@
+.container-fluid{
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.error{
+    color: red;
+}
+
+.information{
+    background-color: lightblue;
+    text-align: center;
+}
