@@ -3,6 +3,7 @@ import "../../style/Shop.css"
 import type {Product} from "./product.data"
 import {products} from "./product.data"
 import type {Cart} from "./product.data"
+import Swal from 'sweetalert2'
 interface State{
   carts:Cart[]
 }
@@ -34,7 +35,10 @@ export default class ProductList extends Component<{},State> {
           localStorage.setItem("carts", JSON.stringify(this.state.carts));
           window.dispatchEvent(new Event("cartUpdated"));
         } else {
-          alert("Số lượng sản phẩm trong kho không đủ");
+          Swal.fire({
+            text: "Số lượng sản phẩm trong kho không đủ!",
+            icon: "error"
+          });
         }
       } else{
         const newCartItem = {
